@@ -14,7 +14,6 @@ module Issuu
     end
     
     class << self
-    
       def add(name, params={})
         response = Cli.http_post(
           Issuu::API_URL,
@@ -46,7 +45,6 @@ module Issuu
         )
         return true
       end
-    
     end
   end
 end

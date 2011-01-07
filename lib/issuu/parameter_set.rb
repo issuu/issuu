@@ -18,6 +18,5 @@ module Issuu
     def output
       @params.merge({:signature => generate_signature})
     end
-    
   end
 end
