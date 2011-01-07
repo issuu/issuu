@@ -17,7 +17,7 @@ module Issuu
       def url_upload(url, params={})
         response = Cli.http_post(
           Issuu::API_URL,
-          Parameter.new("issuu.document.url_upload", params.merge({:slurpUrl => url})).output
+          ParameterSet.new("issuu.document.url_upload", params.merge({:slurpUrl => url})).output
         )
         Document.new(response["rsp"]["_content"]["document"])
       end
