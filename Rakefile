@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.summary = "Issuu API"
   gem.description = "Provides basic methods to access the Issuu API"
   gem.email = "bastien.vaucher@gmail.com"
-  gem.authors = ["Bastien Vaucher"]
+  gem.authors = ["Bastien Vaucher - MagmaHQ"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
   #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
