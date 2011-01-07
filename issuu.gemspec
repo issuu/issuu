@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "issuu.gemspec",
     "lib/issuu.rb",
     "lib/issuu/bookmark.rb",
     "lib/issuu/cli.rb",
