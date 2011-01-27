@@ -11,7 +11,7 @@ module Issuu
     end
     
     def generate_signature
-      string_to_sign = "#{@secret}#{@params.sort_by {|k| k.to_s }.to_s}"
+      string_to_sign = "#{@secret}#{@params.sort_by {|k| k.to_s }.flatten.join}"
       Digest::MD5.hexdigest(string_to_sign)
     end
     
