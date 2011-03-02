@@ -20,11 +20,10 @@ See the {full Issuu API reference}[http://issuu.com/services/api/]
   end
 
   puts Issuu::Document.list.inspect
-  response = Issuu::Document.upload('path_to_your_file', 'application/pdf')
-  name = response["rsp"]["_content"]["document"]["name"]
-  puts "File uploaded: #{name}"
+  document = Issuu::Document.upload('path_to_your_file', 'application/pdf')
+  puts "File uploaded: #{document.name}"
   puts Issuu::Document.list.inspect
-  Issuu::Document.delete([name])
+  Issuu::Document.delete([document.name])
   puts Issuu::Document.list.inspect
 
 == Contributing to issuu
