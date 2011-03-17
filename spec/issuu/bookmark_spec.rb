@@ -29,6 +29,7 @@ describe Issuu::Bookmark do
     it "should assign all the params given in the hash and make them accessible" do
       subject.name.should == "Magma"
       subject.description.should == "Rocks!"
+      subject.attributes.should == {:name => "Magma", :description => "Rocks!"}
     end
   end
   
@@ -112,6 +113,12 @@ describe Issuu::Bookmark do
     end
     
     subject { Issuu::Bookmark.delete(["bookmark_id"]) }
+
+    it "should return an instance of the uploaded document" do
+      subject == true
+    end
+    
+    subject { Issuu::Bookmark.delete(["bookmark_id"], {:api_key => "secret", :secret => "secret"}) }
 
     it "should return an instance of the uploaded document" do
       subject == true

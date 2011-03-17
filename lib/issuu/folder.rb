@@ -1,6 +1,9 @@
 module Issuu
   class Folder
+    attr_reader :attributes
+    
     def initialize(hash)
+      @attributes = hash
       hash.each do |key, value|
         metaclass.send :attr_accessor, key
         instance_variable_set("@#{key}", value)
@@ -38,10 +41,10 @@ module Issuu
         Folder.new(response["rsp"]["_content"]["folder"])
       end
       
-      def delete(folder_ids)        
+      def delete(folder_ids, params={})        
         Cli.http_post(
           Issuu::API_URL,
-          ParameterSet.new("issuu.folder.delete", {:folderIds => folder_ids.join(',')}).output
+          ParameterSet.new("issuu.folder.delete", params.merge({:folderIds => folder_ids.join(',')})).output
         )
         return true
       end

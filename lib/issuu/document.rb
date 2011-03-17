@@ -1,6 +1,9 @@
 module Issuu
-  class Document    
+  class Document
+    attr_reader :attributes
+    
     def initialize(hash)
+      @attributes = hash
       hash.each do |key, value|
         metaclass.send :attr_accessor, key
         instance_variable_set("@#{key}", value)
@@ -49,10 +52,10 @@ module Issuu
         response["rsp"]["_content"]["result"]["_content"].map{|document_hash| Document.new(document_hash["document"]) }
       end
       
-      def delete(filenames)        
+      def delete(filenames, params={})        
         Cli.http_post(
           Issuu::API_URL,
-          ParameterSet.new("issuu.document.delete", {:names => filenames.join(',')}).output
+          ParameterSet.new("issuu.document.delete", params.merge({:names => filenames.join(',')})).output
         )
         return true
       end
