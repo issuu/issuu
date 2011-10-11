@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{issuu}
-  s.version = "0.1.2"
+  s.name = "issuu"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bastien Vaucher - MagmaHQ"]
-  s.date = %q{2011-03-17}
-  s.description = %q{Provides basic methods to access the Issuu API}
-  s.email = %q{bastien.vaucher@gmail.com}
+  s.date = "2011-10-11"
+  s.description = "Provides basic methods to access the Issuu API"
+  s.email = "bastien.vaucher@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -37,11 +37,11 @@ Gem::Specification.new do |s|
     "spec/issuu/folder_spec.rb",
     "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/bastien/issuu}
+  s.homepage = "http://github.com/bastien/issuu"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.5.3}
-  s.summary = %q{Issuu API}
+  s.rubygems_version = "1.8.11"
+  s.summary = "Issuu API"
   s.test_files = [
     "spec/issuu/bookmark_spec.rb",
     "spec/issuu/document_spec.rb",
