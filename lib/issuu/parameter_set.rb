@@ -1,13 +1,14 @@
 module Issuu
   class ParameterSet
     def initialize(action, extra_params={})
+      extra_params.symbolize_keys!
       @api_key = extra_params.delete(:api_key) || Issuu.api_key
       @secret = extra_params.delete(:secret) || Issuu.secret
       @params = extra_params.update({
         :action => action,
         :apiKey => @api_key,
         :format => "json"
-      }).select{|key, value| !value.nil? }
+      }).select{|key, value| !value.nil? && !value.empty? }
     end
     
     def generate_signature
