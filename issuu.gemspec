@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "issuu"
-  s.version = "0.1.5"
+  s.version = "0.1.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bastien Vaucher - MagmaHQ"]
@@ -35,6 +35,7 @@ Gem::Specification.new do |s|
     "spec/issuu/bookmark_spec.rb",
     "spec/issuu/document_spec.rb",
     "spec/issuu/folder_spec.rb",
+    "spec/issuu/parameter_set_spec.rb",
     "spec/spec_helper.rb"
   ]
   s.homepage = "http://github.com/bastien/issuu"
@@ -46,6 +47,7 @@ Gem::Specification.new do |s|
     "spec/issuu/bookmark_spec.rb",
     "spec/issuu/document_spec.rb",
     "spec/issuu/folder_spec.rb",
+    "spec/issuu/parameter_set_spec.rb",
     "spec/spec_helper.rb"
   ]
 
