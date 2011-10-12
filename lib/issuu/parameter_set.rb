@@ -8,7 +8,7 @@ module Issuu
         :action => action,
         :apiKey => @api_key,
         :format => "json"
-      }).select{|key, value| !value.nil? && !value.empty? }
+      }).select{|key, value| !value.nil? }
     end
     
     def generate_signature
