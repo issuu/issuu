@@ -41,5 +41,5 @@ tmtags
 # For vim:
 #*.swp
 
-
+vendor
 secret.yml
