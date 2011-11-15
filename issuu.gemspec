@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "issuu"
-  s.version = "0.1.6"
+  s.version = "0.1.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bastien Vaucher - MagmaHQ"]
-  s.date = "2011-10-12"
+  s.date = "2011-11-15"
   s.description = "Provides basic methods to access the Issuu API"
   s.email = "bastien.vaucher@gmail.com"
   s.extra_rdoc_files = [
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "issuu.gemspec",
+    "lib/hash.rb",
     "lib/issuu.rb",
     "lib/issuu/bookmark.rb",
     "lib/issuu/cli.rb",
@@ -41,7 +42,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/bastien/issuu"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.11"
+  s.rubygems_version = "1.8.10"
   s.summary = "Issuu API"
   s.test_files = [
     "spec/issuu/bookmark_spec.rb",
