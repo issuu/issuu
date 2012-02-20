@@ -3,7 +3,7 @@ module Issuu
     class << self
       def check_for_exceptions(json_data)
         if json_data['rsp']['stat'].eql?("fail")
-          raise(StandardError, json_data['rsp']["_content"]["error"]["message"])
+          IssuuExceptionManager.new(json_data['rsp']["_content"]["error"]).raise_error
         end
       end
       

@@ -26,9 +26,5 @@ module Issuu
   
 end
 
-require 'issuu/cli'
-require 'issuu/document'
-require 'issuu/bookmark'
-require 'issuu/folder'
-require 'issuu/parameter_set'
-require 'hash'
+Dir[File.dirname(__FILE__) +"/issuu/*.rb"].each {|file| require file }
+require File.dirname(__FILE__) + '/hash.rb'
