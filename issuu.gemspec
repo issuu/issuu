@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "issuu"
-  s.version = "0.1.7"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bastien Vaucher - MagmaHQ"]
-  s.date = "2011-11-15"
+  s.date = "2012-02-20"
   s.description = "Provides basic methods to access the Issuu API"
   s.email = "bastien.vaucher@gmail.com"
   s.extra_rdoc_files = [
@@ -32,10 +32,12 @@ Gem::Specification.new do |s|
     "lib/issuu/cli.rb",
     "lib/issuu/document.rb",
     "lib/issuu/folder.rb",
+    "lib/issuu/issuu_exception_manager.rb",
     "lib/issuu/parameter_set.rb",
     "spec/issuu/bookmark_spec.rb",
     "spec/issuu/document_spec.rb",
     "spec/issuu/folder_spec.rb",
+    "spec/issuu/issuu_exception_manager_spec.rb",
     "spec/issuu/parameter_set_spec.rb",
     "spec/spec_helper.rb"
   ]
@@ -48,6 +50,7 @@ Gem::Specification.new do |s|
     "spec/issuu/bookmark_spec.rb",
     "spec/issuu/document_spec.rb",
     "spec/issuu/folder_spec.rb",
+    "spec/issuu/issuu_exception_manager_spec.rb",
     "spec/issuu/parameter_set_spec.rb",
     "spec/spec_helper.rb"
   ]
@@ -57,6 +60,7 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<activesupport>, [">= 3.0.3"])
+      s.add_runtime_dependency(%q<i18n>, [">= 0"])
       s.add_runtime_dependency(%q<multipart-post>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -68,6 +72,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<multipart-post>, [">= 0"])
     else
       s.add_dependency(%q<activesupport>, [">= 3.0.3"])
+      s.add_dependency(%q<i18n>, [">= 0"])
       s.add_dependency(%q<multipart-post>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -80,6 +85,7 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<activesupport>, [">= 3.0.3"])
+    s.add_dependency(%q<i18n>, [">= 0"])
     s.add_dependency(%q<multipart-post>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
