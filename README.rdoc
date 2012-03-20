@@ -1,5 +1,7 @@
 = issuu
 
+{<img src="https://secure.travis-ci.org/bastien/issuu.png" />}[http://travis-ci.org/bastien/issuu]
+
 Access to the Issuu API based on {Guillem Català post}[http://planet.ubiquo.me/using-the-issuucom-api-to-upload-and-delete-p]
 
 See the {full Issuu API reference}[http://issuu.com/services/api/]
