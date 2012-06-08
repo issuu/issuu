@@ -13,12 +13,12 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "issuu"
-  gem.homepage = "http://github.com/bastien/issuu"
+  gem.homepage = "http://github.com/MagmaHQ/issuu"
   gem.license = "MIT"
   gem.summary = "Issuu API"
   gem.description = "Provides basic methods to access the Issuu API"
-  gem.email = "bastien.vaucher@gmail.com"
-  gem.authors = ["Bastien Vaucher - MagmaHQ"]
+  gem.email = "hello@magmahq.com"
+  gem.authors = ["Bastien Vaucher","MagmaHQ"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
   #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
