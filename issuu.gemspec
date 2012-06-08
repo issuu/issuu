@@ -5,13 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = "issuu"
-  s.version = "0.2.0"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Bastien Vaucher - MagmaHQ"]
-  s.date = "2012-02-20"
+  s.authors = ["Bastien Vaucher", "MagmaHQ"]
+  s.date = "2012-06-08"
   s.description = "Provides basic methods to access the Issuu API"
-  s.email = "bastien.vaucher@gmail.com"
+  s.email = "hello@magmahq.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
     ".rspec",
+    ".travis.yml",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
@@ -41,10 +42,10 @@ Gem::Specification.new do |s|
     "spec/issuu/parameter_set_spec.rb",
     "spec/spec_helper.rb"
   ]
-  s.homepage = "http://github.com/bastien/issuu"
+  s.homepage = "http://github.com/MagmaHQ/issuu"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.10"
+  s.rubygems_version = "1.8.17"
   s.summary = "Issuu API"
   s.test_files = [
     "spec/issuu/bookmark_spec.rb",
