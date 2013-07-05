@@ -196,5 +196,33 @@ describe Issuu::Document do
       subject.generate_signature.should == '7431d31140cf412ab5caa73586d6324a'
     end
   end
+
+  describe "basic searching" do
+    subject { Issuu::Document.search(:q => "test") }
+    it "should return a list of documents matching the search term" do
+      subject.class.should == Hash
+      subject.should have_key "numFound"
+      subject.should have_key "docs"
+      subject["docs"].class.should == Array
+    end
+  end
+
+  describe "search and return array of Issuu::Documents" do
+    subject { Issuu::Document.search({:q => "test"}, {:should_convert_to_v1_doc_style => true}) }
+    it "should return a list of documents matching the search term" do
+      subject.class.should == Array
+      subject.first.class.should == Issuu::Document
+    end
+  end
+
+  #this test could break since it relies on a specific document
+  describe "Basic page searching" do
+    subject { Issuu::Document.search({:q => "map", :documentId => "130703234720-22e380f63a33451e8116ce86a3abcbfe"}, {:page => true}) }
+    it "should return a list of pages referencing map in the document" do
+      subject.class.should == Hash
+      subject["docs"].first.should have_key "pageId"
+      subject["docs"].first["pageId"].should == 3
+    end
+  end
   
 end
