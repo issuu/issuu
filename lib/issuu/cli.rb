@@ -2,8 +2,10 @@ module Issuu
   class Cli
     class << self
       def check_for_exceptions(json_data)
-        if json_data['rsp']['stat'].eql?("fail")
-          IssuuExceptionManager.new(json_data['rsp']["_content"]["error"]).raise_error
+        unless json_data['response'].present? #search does not seem to send errors
+          if json_data['rsp']['stat'].eql?("fail")
+            IssuuExceptionManager.new(json_data['rsp']["_content"]["error"]).raise_error
+          end
         end
       end
       

@@ -59,6 +59,32 @@ module Issuu
         )
         return true
       end
+
+      def search(params,options= {})
+        response = Cli.http_get(
+          get_search_url(options[:page]),
+          ParameterSet.new("issuu.documents.search", params).output
+        )
+        if options[:should_convert_to_v1_doc_style]
+          return response["response"]["docs"].map{|document_hash| convert_to_v1_doc_style(document_hash) }
+        else
+          return response["response"]
+        end
+      end
+
+      def get_search_url(is_page)
+        if is_page
+          URI.parse(Issuu::API_SEARCH_URL + "page")
+        else
+          URI.parse(Issuu::API_SEARCH_URL + "document")
+        end
+      end
+
+      def convert_to_v1_doc_style(doc)
+        Document.new({:name => doc['docname'], :username => doc['username'],
+                      :documentId => doc['documentId'], :description => doc['description']})
+      end
+
     end
   end
 end

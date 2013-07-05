@@ -9,6 +9,7 @@ require 'active_support/hash_with_indifferent_access'
 module Issuu
   API_URL = URI.parse('http://api.issuu.com/1_0')
   API_UPLOAD_URL = URI.parse('http://upload.issuu.com/1_0')
+  API_SEARCH_URL = 'http://search.issuu.com/api/2_0/'
   
   class << self
     attr_accessor :api_key, :secret
@@ -23,6 +24,8 @@ module Issuu
       yield self
     end
   end
+
+
   
 end
 
