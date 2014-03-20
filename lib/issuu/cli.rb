@@ -18,6 +18,12 @@ module Issuu
         request = Net::HTTP.get(url.host, path)
         decoded_response_body(request)
       end
+
+      def http_raw_get(url, params)
+        path = "#{url.path}?".concat(params.collect { |k,v| "#{k}=#{CGI::escape(v.to_s)}" }.reverse.join('&')) unless params.nil?
+        request = Net::HTTP.get(url.host, path)
+        request
+      end
       
       def http_post(url, params)
         request = Net::HTTP.post_form(url+ '?', params)
