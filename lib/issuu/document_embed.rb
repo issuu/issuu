@@ -17,16 +17,16 @@ module Issuu
     end
 
     class << self
-      def add(document_id, reader_start_page, width, height)
+      def add(document_id, reader_start_page, width, height, params = {})
         response = Cli.http_post(
             Issuu::API_URL,
             ParameterSet.new("issuu.document_embed.add",
-                             {
-                                 :documentId => document_id,
-                                 :readerStartPage => reader_start_page.to_s,
-                                 :width => width.to_s,
-                                 :height => height.to_s
-                             }
+                             params.merge({
+                                              :documentId => document_id,
+                                              :readerStartPage => reader_start_page.to_s,
+                                              :width => width.to_s,
+                                              :height => height.to_s
+                                          })
             ).output
         )
         DocumentEmbed.new(response["rsp"]["_content"]["documentEmbed"])
@@ -43,7 +43,7 @@ module Issuu
       def update(embed_id, params={})
         response = Cli.http_post(
             Issuu::API_URL,
-            ParameterSet.new("issuu.document_embed.update", params.merge(:embedId => embed_id)).output
+            ParameterSet.new("issuu.document_embed.update", params.merge({:embedId => embed_id})).output
         )
         DocumentEmbed.new(response["rsp"]["_content"]["documentEmbed"])
       end
@@ -56,10 +56,10 @@ module Issuu
         return true
       end
 
-      def get_html_code(embed_id)
+      def get_html_code(embed_id, params = {})
         response = Cli.http_raw_get(
             Issuu::API_URL,
-            ParameterSet.new("issuu.document_embed.get_html_code", { :embedId => embed_id }).output
+            ParameterSet.new("issuu.document_embed.get_html_code", params.merge({:embedId => embed_id })).output
         )
         return response
       end
