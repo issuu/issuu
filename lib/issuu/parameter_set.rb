@@ -9,6 +9,9 @@ module Issuu
         :apiKey => @api_key,
         :format => "json"
       }).hash_select{ |key, value| !value.nil? }
+
+      # issuu.document_embed.get_html_code returns an HTML snippit
+      @params.delete(:format) if action == 'issuu.document_embed.get_html_code'
     end
     
     def generate_signature
